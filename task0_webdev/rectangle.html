@@ -3,11 +3,26 @@
 
 <link type="text/css" rel="stylesheet" href="css/rectcir.css">
 
+<style>
+#circle
+{
+	position : relative;
+	width : 25px;
+	height : 25px;
+	border-radius : 25px;
+	background:#a9db7a;
+	border:5px solid #92c563;
+	-moz-border-radius : 25px;
+}
+
+
+
+</style>
 
 <script>
-	len=700;
-	bre=500;
-	change=5;
+	len=250;
+	bre=150;
+	change=1;
 	timeout=10;
 	st=0;
 	status=1;
@@ -31,7 +46,7 @@
 		status=1;
 		x=document.getElementById("circle");
 		x.style.left = parseInt(x.style.left)+change+'px';
-		if(parseInt(x.style.left)<500+len)
+		if(parseInt(x.style.left)<0+len)
 			m=setTimeout(right,timeout);
 		else
 			setTimeout(down,timeout);
@@ -41,7 +56,7 @@
 		status=2;
 		x=document.getElementById("circle");
 		x.style.top = parseInt(x.style.top)+change+'px';
-		if(parseInt(x.style.top)<500+bre)
+		if(parseInt(x.style.top)<0+bre)
 			n=setTimeout(down,timeout);
 		else
 			setTimeout(left,timeout);
@@ -51,7 +66,7 @@
 		status=3;
 		x=document.getElementById("circle");
 		x.style.left = parseInt(x.style.left)-change+'px';
-		if(parseInt(x.style.left)>500)
+		if(parseInt(x.style.left)>0)
 			o=setTimeout(left,timeout);
 		else
 			setTimeout(up,timeout);
@@ -61,7 +76,7 @@
 		status=4;
 		x=document.getElementById("circle");
 		x.style.top = parseInt(x.style.top)-change+'px';
-		if(parseInt(x.style.top)>500)
+		if(parseInt(x.style.top)>0)
 			p=setTimeout(up,timeout);
 		else
 			setTimeout(right,timeout);
@@ -72,32 +87,32 @@
 	}
 	function lengthup()
 	{
-		if(len<1380)
-			len+=40;
+		if(len<460)
+			len+=10;
 		else
 			alert("You have reached the upper limit");
 	}
 	
 	function lengthdown()
 	{
-		if(len>40)
-			len-=40;
+		if(len>10)
+			len-=20;
 		else
 			alert("You have reached the lower limit");
 			
 	}
 	function breadthup()
 	{
-		if(bre<1380)
-			bre+=40;
+		if(bre<460)
+			bre+=20;
 		else
 			alert("You have reached the upper limit");
 	}
 	
 	function breadthdown()
 	{
-		if(bre>40)
-			bre-=40;
+		if(bre>10)
+			bre-=20;
 		else
 			alert("You have reached the lower limit");
 	}
@@ -120,8 +135,8 @@
 	function reset()
 	{
 		x=document.getElementById("circle");
-		x.style.left='500px';
-		x.style.top='500px';
+		x.style.left='0px';
+		x.style.top='0px';
 		status=1;
 		clearTimeout(m);clearTimeout(n);clearTimeout(o);clearTimeout(p);
 		
@@ -131,7 +146,6 @@
 </head>
 <body>
 	<h2><p id="info">Rectangle</p></h2>
-	<i>Note : Firefox is not advised</i><br>
 	<a href="circle.html">Switch to circle</a>
 	
 	<div id="header">
@@ -146,7 +160,7 @@
 		<button onClick="reset()">Reset</button>
 	</div>
 	<div id="container">
-		<div id="circle" style="zoom: 25%; left: 500px; top: 500px;"></div>
+		<div id="circle" style="left: 0px; top: 0px;"></div>
 	</div>
 		
 </body>
