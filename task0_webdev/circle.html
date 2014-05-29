@@ -1,0 +1,88 @@
+<html>
+<head>
+
+<link type="text/css" rel="stylesheet" href="css/rectcir.css">
+
+
+<script>
+	i=1;
+	segment=360;
+	radius=300;
+	timeout=10;
+	var horizontalCenter = Math.floor(window.innerWidth/2);
+	function move_circle()
+	{
+			x=document.getElementById("circle");
+			x.style.top = 450+radius*Math.sin(2*Math.PI*i/segment)+'px';
+			x.style.left = 450+radius*Math.cos(2*Math.PI*i/segment)+'px';
+			if(i==segment)
+				i=1;
+			else
+				i++;
+			m=setTimeout(move_circle,timeout);
+		
+	}
+		
+	function radiusup()
+	{
+		
+		if(radius<440)
+			radius+=20;
+		else
+			alert("You have reached the upper limit!!!");
+	}
+	
+	function radiusdown()
+	{
+		if(radius>20)
+			radius-=20;
+		else
+			alert("You have reached the lower limit!!!");
+	}
+	
+	function speedup()
+	{
+		timeout-=2;
+	}
+	
+	function speeddown()
+	{
+		timeout+=2;
+	}
+	function stop()
+	{
+		
+		clearTimeout(m);
+	}
+	function reset()
+	{
+		
+		clearTimeout(m);
+		x=document.getElementById("circle");
+		x.style.left='450px';
+		x.style.top='450px';
+	}
+</script>
+
+
+</head>
+<body>
+	
+	<h2><p id="info">Circle</p></h2>
+	<a href="rectangle.html">Switch to rectangle</a>
+		
+	<div id="header">
+		<button onclick="radiusup()">Radius up</button>
+		<button onclick="radiusdown()">Radius down</button><br>
+		<button onclick="speedup()">Speed up</button>
+		<button onclick="speeddown()">Speed down</button><br>
+		<button onclick="move_circle()">Start</button>
+		<button onclick="stop()">Stop</button>
+		<button onClick="reset()">Reset</button>
+	</div>
+	<div id="container">
+		<div id="circle" onclick="move_circle()" style="zoom:50%; left: 450px; top: 450px;"></div>
+	</div>
+</body>
+
+</html>

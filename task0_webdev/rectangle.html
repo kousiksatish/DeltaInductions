@@ -1,0 +1,153 @@
+<html>
+<head>
+
+<link type="text/css" rel="stylesheet" href="css/rectcir.css">
+
+
+<script>
+	len=700;
+	bre=500;
+	change=5;
+	timeout=10;
+	st=0;
+	status=1;
+	function start()
+	{
+	
+		if(status==1)	
+			right();
+		else if(status==2)
+			down();
+		else if(status==3)
+			left();
+		else
+			up();
+	
+	}
+			
+			
+	function right()
+	{
+		status=1;
+		x=document.getElementById("circle");
+		x.style.left = parseInt(x.style.left)+change+'px';
+		if(parseInt(x.style.left)<500+len)
+			m=setTimeout(right,timeout);
+		else
+			setTimeout(down,timeout);
+	}
+	function down()
+	{
+		status=2;
+		x=document.getElementById("circle");
+		x.style.top = parseInt(x.style.top)+change+'px';
+		if(parseInt(x.style.top)<500+bre)
+			n=setTimeout(down,timeout);
+		else
+			setTimeout(left,timeout);
+	}
+	function left()
+	{
+		status=3;
+		x=document.getElementById("circle");
+		x.style.left = parseInt(x.style.left)-change+'px';
+		if(parseInt(x.style.left)>500)
+			o=setTimeout(left,timeout);
+		else
+			setTimeout(up,timeout);
+	}
+	function up()
+	{
+		status=4;
+		x=document.getElementById("circle");
+		x.style.top = parseInt(x.style.top)-change+'px';
+		if(parseInt(x.style.top)>500)
+			p=setTimeout(up,timeout);
+		else
+			setTimeout(right,timeout);
+	}
+	function boxval()
+	{
+		document.getElementById("info").innerHTML=String(document.getElementById("box").value);
+	}
+	function lengthup()
+	{
+		if(len<1380)
+			len+=40;
+		else
+			alert("You have reached the upper limit");
+	}
+	
+	function lengthdown()
+	{
+		if(len>40)
+			len-=40;
+		else
+			alert("You have reached the lower limit");
+			
+	}
+	function breadthup()
+	{
+		if(bre<1380)
+			bre+=40;
+		else
+			alert("You have reached the upper limit");
+	}
+	
+	function breadthdown()
+	{
+		if(bre>40)
+			bre-=40;
+		else
+			alert("You have reached the lower limit");
+	}
+
+	function speedup()
+	{
+		timeout-=2;
+	}
+	
+	function speeddown()
+	{
+		timeout+=2;
+	}
+	function stop()
+	{
+		
+		clearTimeout(m);clearTimeout(n);clearTimeout(o);clearTimeout(p);
+		
+	}
+	function reset()
+	{
+		x=document.getElementById("circle");
+		x.style.left='500px';
+		x.style.top='500px';
+		status=1;
+		clearTimeout(m);clearTimeout(n);clearTimeout(o);clearTimeout(p);
+		
+	}
+</script>
+
+</head>
+<body>
+	<h2><p id="info">Rectangle</p></h2>
+	<a href="circle.html">Switch to circle</a>
+	
+	<div id="header">
+		<button onclick="lengthup()">Length up</button>
+		<button onclick="lengthdown()">Length down</button><br>
+		<button onclick="breadthup()">Breadth up</button>
+		<button onclick="breadthdown()">Breadth down</button><br>
+		<button onclick="speedup()">Speed up</button>
+		<button onclick="speeddown()">Speed down</button><br>
+		<button onclick="start()">Start</button>
+		<button onclick="stop()">Stop</button>
+		<button onClick="reset()">Reset</button>
+	</div>
+	<div id="container">
+		<div id="circle" style="zoom: 25%; left: 500px; top: 500px;"></div>
+	</div>
+		
+</body>
+
+</html>

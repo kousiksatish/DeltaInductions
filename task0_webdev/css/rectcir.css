@@ -1,0 +1,31 @@
+#circle
+{
+	position : relative;
+	width : 100px;
+	height : 100px;
+	border-radius : 50px;
+	background:#a9db7a;
+	border:5px solid #92c563;
+	-moz-border-radius : 50px;
+}
+
+#container
+{
+	margin-left:100px;
+	height : 500px;
+	width : 500px;
+	background:gray;
+}
+
+#info
+{
+	width:700px;
+	text-align:center;
+}
+#header
+{
+	height:100px;
+	width:700px;
+	background:lightgray;
+	text-align:center;
+}
