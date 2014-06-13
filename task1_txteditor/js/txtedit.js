@@ -98,6 +98,18 @@ function colourchange(col)
 	textarea.value =  textarea.value.substring(0,start) + replace + textarea.value.substring(end,len);
 }
 
+
+function Para()
+{
+	var textarea = document.getElementById("area");
+	var len = textarea.value.length;
+	var start = textarea.selectionStart;
+	var end = textarea.selectionEnd;
+	var sel = textarea.value.substring(start, end);
+	var replace = '[p]' + sel + '[/p]';
+	textarea.value =  textarea.value.substring(0,start) + replace + textarea.value.substring(end,len);
+}
+
 function Preview()
 {
 	var textarea = document.getElementById("area");
@@ -111,8 +123,10 @@ function Preview()
 	x = x.split('[/b]').join('</b>');
 	x = x.split('[u]').join('<u>');
 	x = x.split('[/u]').join('</u>');
-	x = x.split('[i]').join('<i>');
+	x = x.split('[i]').join('<i>');  //replace tags
 	x = x.split('[/i]').join('</i>');
+	x = x.split('[p]').join('<p>');
+	x = x.split('[/p]').join('</p>');
 	
 	x = x.split('[code]').join('<div class="code">');
 	x = x.split('[/code]').join('</div>');
@@ -120,6 +134,6 @@ function Preview()
 	x = x.split('[color:red]').join('<font color="red">');
 	x = x.split('[color:yellow]').join('<font color="yellow">');
 	x = x.split('[color:blue]').join('<font color="blue">');
-	half2.innerHTML = x;
+	half2.innerHTML = x; //print on half2
 	
 }
