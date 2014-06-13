@@ -1,0 +1,51 @@
+#half1
+{
+	width : 40%;
+	float:left;
+	min-height : 90%;
+	//background : red;
+	border : 10px solid gray;
+}
+
+#half2
+{
+	width : 40%;
+	float:left;
+	min-height : 87%;
+	border : 10px solid gray;
+	padding-top : 20px;
+	padding-left : 10px;
+}
+#controls
+{
+	height : 20%;
+	float:left;
+	width : 100%;
+	background : green;
+	text-align : center;
+	//border : 10px solid gray;
+}
+#container
+{
+	height : 70%;
+	float:left;
+	width : 100%;
+	background : blue ;
+	text-align : center;
+	//border : 10px solid gray;
+	
+}
+
+.code
+{
+	background : rgb(182, 177, 177);
+	height : auto;
+	width : auto;
+	margin-left : 50px;
+	margin-right : 50px;
+}
+
+.ind1
+{
+	padding-left : 20px;
+}

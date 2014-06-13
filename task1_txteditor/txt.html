@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Text Editor by Kousik S</title>
+
+<link rel="stylesheet" href="css/txtedit.css">
+
+<script src="js/txtedit.js"></script>
+
+
+
+</head>
+
+<body>
+	<div id="half1">
+		<div id="controls">
+			<button onclick="Bold()">Bold</button>
+			<button onclick="Underline()">Underline</button>
+			<button onclick="Italics()">Italics</button><br>
+			<button onclick="Code()">Code</button>
+			<button onclick="Dold()">Dold</button>
+			<button onclick="Ditalics()">Ditalics</button><br>
+			
+			Font colour : 
+			<b>
+				<a href='javascript:colourchange("red")'><font color="red">Red</font></a>
+				<a href='javascript:colourchange("yellow")'><font color="yellow">Yellow</font></a>
+				<a href='javascript:colourchange("blue")'><font color="blue">Blue</font></a>
+			
+			</b><br><br>
+			Tip : Use four spaces for a tab space.<br>
+		</div>
+		<div id="container">
+			<br><br>
+			<textarea rows="20" cols="50" id="area" placeholder="Edit your text here..."></textarea><br>
+			<button onclick="Preview()">Preview</button>
+		</div>
+		
+	</div>
+	<div id="half2"><font color="gray">Edit your text and click on 'preview' ...</font></div>
+
+</body>
+
+
+</html>
