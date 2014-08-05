@@ -3,6 +3,7 @@
 	width : 40%;
 	float:left;
 	min-height : 90%;
+	//background : red;
 	border : 10px solid gray;
 }
 
@@ -22,6 +23,7 @@
 	width : 100%;
 	background : green;
 	text-align : center;
+	//border : 10px solid gray;
 }
 #container
 {
@@ -29,7 +31,9 @@
 	float:left;
 	width : 100%;
 	background : blue ;
-	text-align : center;	
+	text-align : center;
+	//border : 10px solid gray;
+	
 }
 
 .code
